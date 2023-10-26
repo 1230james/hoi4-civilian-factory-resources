@@ -1,0 +1,88 @@
+on_actions = {
+    # Initialize
+    on_startup = {
+        effect = {
+            every_country = {
+                CFR_se_calculate_resource_usage           = yes
+                CFR_se_calculate_factory_output_reduction = yes
+                CFR_se_handle_dyn_modifier                = yes
+                
+                if = {
+                    limit = {
+                        is_ai = no
+                    }
+                    country_event = {
+                        id   = CFR_ev.1
+                        days = 1
+                    }
+                    country_event = {
+                        id   = CFR_ev.1
+                        days = 2
+                    }
+                    country_event = {
+                        id   = CFR_ev.1
+                        days = 3
+                    }
+                    country_event = {
+                        id   = CFR_ev.1
+                        days = 4
+                    }
+                    country_event = {
+                        id   = CFR_ev.1
+                        days = 5
+                    }
+                    country_event = {
+                        id   = CFR_ev.1
+                        days = 6
+                    }
+                }
+            }
+        }
+    }
+    
+    # Normal running
+	on_weekly = {
+		effect = {
+            # Fire weekly for AI for performance savings
+			if = {
+                limit = {
+                    is_ai = yes
+                }
+                CFR_se_calculate_resource_usage           = yes
+                CFR_se_calculate_factory_output_reduction = yes
+                CFR_se_handle_dyn_modifier                = yes
+            }
+            
+            # Fire daily for players
+            else = {
+                CFR_se_calculate_resource_usage           = yes
+                CFR_se_calculate_factory_output_reduction = yes
+                CFR_se_handle_dyn_modifier                = yes
+                country_event = {
+                    id   = CFR_ev.1
+                    days = 1
+                }
+                country_event = {
+                    id   = CFR_ev.1
+                    days = 2
+                }
+                country_event = {
+                    id   = CFR_ev.1
+                    days = 3
+                }
+                country_event = {
+                    id   = CFR_ev.1
+                    days = 4
+                }
+                country_event = {
+                    id   = CFR_ev.1
+                    days = 5
+                }
+                country_event = {
+                    id   = CFR_ev.1
+                    days = 6
+                }
+            }
+		}
+	}
+}
