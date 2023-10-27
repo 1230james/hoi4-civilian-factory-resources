@@ -1,0 +1,21 @@
+CFR_resource_modifier = {
+    # iconless to keep hidden
+    
+    enable = {
+        always = yes
+    }
+    
+    country_resource_cost_steel    = CFR_steel_usage
+    country_resource_cost_chromium = CFR_chromium_usage
+}
+
+CFR_factory_output_modifier = {
+    # iconless to keep hidden
+    
+    enable = {
+        always = yes
+    }
+    
+    production_speed_buildings_factor = CFR_factory_output_reduction
+    industry_repair_factor            = CFR_factory_output_reduction
+}

@@ -1,0 +1,21 @@
+# Stop building civs if we have an input shortage
+CFR_halt_civs_construction = {
+    enable = {
+        OR = {
+            check_variable = { resource@steel    < 0 }
+            check_variable = { resource@chromium < 0 }
+        }
+        num_of_civilian_factories > 15 # First 15 are free
+    }
+    
+    abort = {
+        check_variable = { resource@steel    > -1 }
+        check_variable = { resource@chromium > -1 }
+    }
+    
+    ai_strategy = {
+        type  = building_target
+        id    = industrial_complex
+        value = -10000
+    }
+}
