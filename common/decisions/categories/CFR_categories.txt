@@ -2,7 +2,7 @@ CFR_decision_category = {
 	icon = GFX_decision_category_generic_industry
     
 	visible = {
-        always = yes
+        num_of_civilian_factories > 15 # First 15 are free
     }
     
 	visible_when_empty = yes
