@@ -58,8 +58,8 @@ CFR_se_handle_dyn_modifier = {
 # Determine if factories are slowed down, and if so, by how much
 # Outputs the following values to the listed variables:
 #   CFR_factory_output_reduction: Decimal expression of % slowdown; range is [-1.00, 0]
-#   CFR_steel_deficit:    Qty. of steel demand not met; always 0 if there is no shortage
-#   CFR_chromium_deficit: Qty. of chromium demand not met; always 0 if no shortage
+#   CFR_steel_deficit:    Qty. of steel demand not met; always 0 if there is no shortage; positive number
+#   CFR_chromium_deficit: Qty. of chromium demand not met; always 0 if no shortage; positive number
 CFR_se_calculate_factory_output_reduction = {
     # Set/reset variables
     set_variable = {
@@ -83,6 +83,16 @@ CFR_se_calculate_factory_output_reduction = {
     clamp_variable = {
         var = CFR_chromium_deficit
         max = 0
+    }
+    
+    # Flip sign (since these values are used for user-facing text)
+    multiply_variable = {
+        var   = CFR_steel_deficit
+        value = -1
+    }
+    multiply_variable = {
+        var   = CFR_chromium_deficit
+        value = -1
     }
     
     # Determine shortage impact
@@ -141,12 +151,17 @@ CFR_se_calculate_factory_output_reduction = {
         }
         clamp_temp_variable = {
             var = steel_shortage
-            min = -1
-            max = 0
+            min = 0
+            max = 1
         }
         multiply_temp_variable = {
             var   = steel_shortage
-            value = 0.75 # Max size of shortage penalty; must be positive here as the sign will flip
+            value = -0.75 # Max size of shortage penalty; must be negative here to flip the sign for the modifier
+        }
+        
+        set_variable = {
+            var   = CFR_debug_1
+            value = temp_var:steel_shortage
         }
         
         set_variable = {

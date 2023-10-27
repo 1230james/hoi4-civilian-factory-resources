@@ -1,0 +1,44 @@
+defined_text = {
+    name = CFR_input_shortage_desc
+    text = {
+        trigger = {
+            has_variable   = CFR_factory_output_reduction
+            check_variable = { CFR_factory_output_reduction < 0 }
+        }
+        localization_key = "CFR_desc_shortage"
+    }
+    text = {
+        localization_key = "CFR_EMPTY_STR"
+    }
+}
+
+defined_text = {
+    name = CFR_technology_desc
+    text = {
+        trigger = {
+            has_tech = construction5
+        }
+        localization_key = "CFR_desc_tech_4"
+    }
+    text = {
+        trigger = {
+            has_tech = construction4
+        }
+        localization_key = "CFR_desc_tech_3"
+    }
+    text = {
+        trigger = {
+            has_tech = construction3
+        }
+        localization_key = "CFR_desc_tech_2"
+    }
+    text = {
+        trigger = {
+            has_tech = construction2
+        }
+        localization_key = "CFR_desc_tech_1"
+    }
+    text = {
+        localization_key = "CFR_EMPTY_STR"
+    }
+}

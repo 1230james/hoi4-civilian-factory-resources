@@ -1,0 +1,11 @@
+CFR_decision_category = {
+	icon = GFX_decision_category_generic_industry
+    
+	visible = {
+        always = yes
+    }
+    
+	visible_when_empty = yes
+    
+	priority = 1000
+}
