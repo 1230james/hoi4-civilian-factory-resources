@@ -10,10 +10,10 @@ CFR will calculate an amount of steel and chromium required as an "input" for th
 
 Inspired by [FeedBackGaming's video discussing the [lack of] uses for Chromium](https://www.youtube.com/watch?v=hxgL2gR7hZQ).
 
-For full information, please visit the [Steam Workshop]() page.
+For full information, please visit the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3062469227) page.
 
 ## Installation
 
-1. Install via [Steam Workshop](), OR
+1. Install via [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3062469227), OR
 
 2. Clone this repository and install into the HoI4 mods folder manually.
