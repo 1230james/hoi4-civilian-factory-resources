@@ -228,7 +228,7 @@ CFR_se_calculate_resource_usage = {
     # ( 75, 105] => 1.25 S, 1.50 C
     # (105, 210] => 1.75 S, 2.50 C
     # (210, inf) => 2.50 S, 4.00 C
-    # Visualized: https://www.desmos.com/calculator/uoipicdpus
+    # Visualized: https://www.desmos.com/calculator/ihvtrjqhwo
     # Please pardon my implementation btw :(
     if = {
         limit = {
